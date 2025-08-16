@@ -7,7 +7,9 @@ interface HeroSectionProps {
 }
 
 const HeroSection = ({ girlfriendName }: HeroSectionProps) => {
-  const [hearts, setHearts] = useState<Array<{ id: number; delay: number; left: number }>>([]);
+  const [hearts, setHearts] = useState<
+    Array<{ id: number; delay: number; left: number }>
+  >([]);
   const audioRef = useRef<HTMLAudioElement>(null);
 
   useEffect(() => {
@@ -148,7 +150,8 @@ const HeroSection = ({ girlfriendName }: HeroSectionProps) => {
               {girlfriendName} ❤️
             </h2>
             <p className="text-xl md:text-2xl text-foreground/80 mb-12 max-w-2xl mx-auto leading-relaxed">
-              A little website filled with love, memories, and all the reasons why you make every day magical ✨
+              A little website filled with love, memories, and all the reasons
+              why you make every day magical ✨
             </p>
           </div>
         </div>
@@ -161,7 +164,7 @@ const HeroSection = ({ girlfriendName }: HeroSectionProps) => {
         {/* Hidden looping audio with fixed low volume and no user controls */}
         <audio
           ref={audioRef}
-          src="src/assets/birthday-song.mp3" /* Replace with your actual song path */
+          src="public/birthday-song.mp3" /* Replace with your actual song path */
           preload="auto"
           loop
           muted={false}
