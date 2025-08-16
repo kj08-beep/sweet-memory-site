@@ -18,7 +18,7 @@ const Index = () => {
 
   // 📅 Customize these dates (format: "YYYY-MM-DD")
   const relationshipStart = "2023-09-26"; // When you started dating
-  const nextBirthday = "2025-08-20"; // Her next birthday
+  const nextBirthday = "2025-07-20"; // Her next birthday
 
   if (!isAuthenticated && !showLogin) {
     return (
