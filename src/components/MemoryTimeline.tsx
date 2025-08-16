@@ -172,8 +172,9 @@ const MemoryTimeline = () => {
                     {memory.mediaType === "video" && (
                       <video
                         src={memory.media}
-                        autoPlay
                         loop
+                        muted
+                        playsInline
                         className="w-full max-w-2xl h-80 md:h-96 object-cover object-center rounded-2xl shadow-soft mx-auto mb-4"
                       />
                     )}
@@ -181,8 +182,6 @@ const MemoryTimeline = () => {
                     {memory.mediaType === "audio" && (
                       <audio
                         src={memory.media}
-                        autoPlay
-                        loop
                         controls
                         className="w-full max-w-2xl mx-auto mb-4"
                       />
