@@ -172,7 +172,10 @@ const MemoryTimeline = () => {
                     {memory.mediaType === "video" && (
                       <video
                         src={memory.media}
-                        controls
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
                         className="w-full max-w-2xl h-80 md:h-96 object-cover object-center rounded-2xl shadow-soft mx-auto mb-4"
                       />
                     )}
