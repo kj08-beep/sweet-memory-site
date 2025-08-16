@@ -183,6 +183,7 @@ const MemoryTimeline = () => {
                         src={memory.media}
                         autoPlay
                         loop
+                        controls
                         className="w-full max-w-2xl mx-auto mb-4"
                       />
                     )}
