@@ -11,7 +11,8 @@ interface Memory {
   title: string;
   date?: string;
   description: string;
-  image: string;
+  media: string; // can be image, video, or audio
+  mediaType: "image" | "video" | "audio";
   icon: React.ReactNode;
 }
 
@@ -82,7 +83,8 @@ const MemoryTimeline = () => {
       date: "April 13, 2025",
       description:
         "You know on this day the wait was over for us, it was around 1year 7months and 11days jab hum wapis date pe gaye the. Yaad hai last date humara tumhare b'day pe he tha and uske baad it was a veryyyyyy log time Jannu.",
-      image: recentdate,
+      media: recentdate,
+      mediaType: "image",
       icon: <Heart className="text-romantic" size={20} />,
     },
     {
@@ -90,7 +92,8 @@ const MemoryTimeline = () => {
       title: "Some of our cute moments together",
       description:
         "Three hours felt like three minutes. We talked about everything and nothing, and I know I want to hear your laugh every day for the rest of my life. Kash ye duriyan jaldi khatam ho aur hum ek dusre ke pass aajaye yaar. I miss Uuuu so muchhhh Januuu ❤️",
-      image: cutemoments,
+      media: cutemoments,
+      mediaType: "image",
       icon: <Coffee className="text-dreamy" size={20} />,
     },
     {
@@ -99,7 +102,8 @@ const MemoryTimeline = () => {
       date: "October 6, 2023",
       description:
         "Tumhe yaad bhi hai humne ek dusre ko sabse pehli baar I love you kab bola tha. mujhe to yaad hai, uske abad se aaj tak mein tumse kehte aaya hun. Anushree I LOVE YOUUUU ❤️",
-      image: Iloveyou,
+      media: Iloveyou,
+      mediaType: "video",
       icon: <Star className="text-accent-warm" size={20} />,
     },
     {
@@ -107,7 +111,8 @@ const MemoryTimeline = () => {
       title: "Your Favourite Song",
       description:
         "Singing it together everytime we hear this. Yaad hai main kabhi kabar tumhare liye ye gaana gaata tha jab bhi tumhe sunna hota tha, ya tum naraz hoti thi. I still have those voice notes of me singing.",
-      image: favsongvid,
+      media: favsongvid, // <-- your mp4 file import
+      mediaType: "video", // <-- new key
       icon: <Music className="text-romantic" size={20} />,
     },
   ];
@@ -157,7 +162,7 @@ const MemoryTimeline = () => {
                     }}
                   >
                     <img
-                      src={memory.image}
+                      src={memory.media}
                       alt={memory.title}
                       className="w-full max-w-2xl h-80 md:h-96 object-cover object-center rounded-2xl shadow-soft mx-auto mb-4"
                     />
@@ -238,7 +243,7 @@ const MemoryTimeline = () => {
                 <X size={24} />
               </button>
               <img
-                src={selectedPhoto.image}
+                src={selectedPhoto.media}
                 alt={selectedPhoto.title}
                 className="mb-6 rounded-xl mx-auto"
                 style={{
