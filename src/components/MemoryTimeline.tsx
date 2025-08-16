@@ -161,11 +161,29 @@ const MemoryTimeline = () => {
                       if (memory.id === 2) setSelectedPhoto(memory);
                     }}
                   >
-                    <img
-                      src={memory.media}
-                      alt={memory.title}
-                      className="w-full max-w-2xl h-80 md:h-96 object-cover object-center rounded-2xl shadow-soft mx-auto mb-4"
-                    />
+                    {memory.mediaType === "image" && (
+                      <img
+                        src={memory.media}
+                        alt={memory.title}
+                        className="w-full max-w-2xl h-80 md:h-96 object-cover object-center rounded-2xl shadow-soft mx-auto mb-4"
+                      />
+                    )}
+
+                    {memory.mediaType === "video" && (
+                      <video
+                        src={memory.media}
+                        controls
+                        className="w-full max-w-2xl h-80 md:h-96 object-cover object-center rounded-2xl shadow-soft mx-auto mb-4"
+                      />
+                    )}
+
+                    {memory.mediaType === "audio" && (
+                      <audio
+                        src={memory.media}
+                        controls
+                        className="w-full max-w-2xl mx-auto mb-4"
+                      />
+                    )}
 
                     <div className="flex items-center gap-3 mb-2">
                       <div className="p-2 bg-primary-soft rounded-full">
