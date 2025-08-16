@@ -172,6 +172,7 @@ const MemoryTimeline = () => {
                     {memory.mediaType === "video" && (
                       <video
                         src={memory.media}
+                        autoPlay
                         loop
                         muted
                         playsInline
