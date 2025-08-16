@@ -164,7 +164,7 @@ const HeroSection = ({ girlfriendName }: HeroSectionProps) => {
         {/* Hidden looping audio with fixed low volume and no user controls */}
         <audio
           ref={audioRef}
-          src="public/birthday-song.mp3" /* Replace with your actual song path */
+          src="/birthday-song.mp3" /* Replace with your actual song path */
           preload="auto"
           loop
           muted={false}
