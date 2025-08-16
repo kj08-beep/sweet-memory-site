@@ -183,7 +183,9 @@ const MemoryTimeline = () => {
                     {memory.mediaType === "audio" && (
                       <audio
                         src={memory.media}
-                        controls
+                        loop
+                        muted={false}
+                        controls={false}
                         className="w-full max-w-2xl mx-auto mb-4"
                       />
                     )}
