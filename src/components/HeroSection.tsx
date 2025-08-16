@@ -165,7 +165,7 @@ const HeroSection = ({ girlfriendName }: HeroSectionProps) => {
         <audio
           ref={audioRef}
           src="/birthday-song.mp3" /* Replace with your actual song path */
-          preload="auto"
+          autoPlay
           loop
           muted={false}
           controls={false}
